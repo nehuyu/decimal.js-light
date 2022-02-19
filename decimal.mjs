@@ -1952,12 +1952,22 @@ function config(obj) {
   if (!obj || typeof obj !== 'object') {
     throw Error(decimalError + 'Object expected');
   }
-  var i, p, v,
+  var i,
+    p,
+    v,
     ps = [
-      'precision', 1, MAX_DIGITS,
-      'rounding', 0, 8,
-      'toExpNeg', -1 / 0, 0,
-      'toExpPos', 0, 1 / 0
+      "precision",
+      1,
+      MAX_DIGITS,
+      "rounding",
+      0,
+      8,
+      "toExpNeg",
+      -Infinity,
+      0,
+      "toExpPos",
+      0,
+      1 / 0,
     ];
 
   for (i = 0; i < ps.length; i += 3) {
